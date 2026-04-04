@@ -11,22 +11,21 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color(red: 18 / 255, green: 30 / 255, blue: 93 / 255)
+                Color("PrimaryBG")
                     .ignoresSafeArea()
                 VStack {
                     Image("solo-icon")
                         .resizable()
                         .scaledToFit()
-                        .cornerRadius(20)
                         .frame(width: 160, height: 160)
-                        .padding(.top, 70)
+                        .cornerRadius(20)
+                        .padding(.top, 50)
                     Text("SOLO")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(Color(red: 163 / 255, green: 232 / 255, blue: 237 / 255))
+                        .font(.system(size: 34, weight: .semibold, design: .serif))
+                        .foregroundStyle(Color("TextColor"))
                     Text("LEVELING SYSTEM")
                         .font(.headline)
-                        .foregroundStyle(Color(red: 163 / 255, green: 232 / 255, blue: 237 / 255))
+                        .foregroundStyle(Color("TextColor"))
                     
                     Spacer()
                     NavigationLink("START") {
@@ -42,8 +41,7 @@ struct ContentView: View {
                     
                     Spacer()
                     Text("ARISE")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
+                        .font(.system(size: 37, weight: .bold, design: .serif))
                         .foregroundStyle(Color.cyan)
                 }
                 .padding()

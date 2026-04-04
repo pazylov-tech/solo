@@ -9,51 +9,42 @@ import SwiftUI
 
 struct AuthView: View {
     var body: some View {
-        ZStack{
-            Color(red: 18 / 255, green: 30 / 255, blue: 93 / 255)
-                .ignoresSafeArea()
-            VStack {
-                HStack {
-                    Image("solo-icon")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 50, height: 50)
-                        .clipShape(.capsule)
-                        .padding(.top, 25)
-                    Text("SOLO")
-                        .font(Font.custom("Avenir-Black", size: 40))
-                        .foregroundStyle(Color.cyan)
-                        .padding(.top, 25)
+        NavigationStack {
+            ZStack{
+                Color("PrimaryBG")
+                    .ignoresSafeArea()
+                VStack {
+                    HStack {
+                        Image("solo-icon")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 45, height: 45)
+                            .clipShape(.capsule)
+                        Text("SOLO")
+                            .font(.system(size: 37, weight: .semibold, design: .serif))
+                            .foregroundStyle(Color.cyan)
+                    }
+                    
+                    Spacer()
+                        Text("Welcome to \nSOLO System")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color.white)
+                            .multilineTextAlignment(.center)
+                    
+                    Spacer()
+                    VStack (spacing: 17) {
+                        NavigationLink("Log In") {
+                            LogInView()
+                        }
+                            .buttonStyle(LogInButtonStyle())
+                        NavigationLink("Sign Up") {
+                            SignUpView()
+                        }
+                            .buttonStyle(SignUpButtonStyle())
+                    }
+                            .padding(.bottom, 70)
                 }
-                
-                Spacer()
-                    Text("Welcome to \nSOLO System")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(Color.white)
-                        .multilineTextAlignment(.center)
-                
-                Spacer()
-                VStack (spacing: 10) {
-                    Button("Log In") {}
-                        .font(.title3)
-                        .fontWeight(.medium)
-                        .padding(.horizontal, 135)
-                        .padding(.vertical, 10)
-                        .background(Color(white: 0.85))
-                        .foregroundStyle(Color.black)
-                        .cornerRadius(15)
-                        .padding()
-                    Button("Sign Up") {}
-                        .font(.title3)
-                        .fontWeight(.medium)
-                        .padding(.horizontal, 126)
-                        .padding(.vertical, 10)
-                        .background(Color(red: 0.267, green: 0.541, blue: 1.0))
-                        .foregroundStyle(Color.white)
-                        .cornerRadius(15)
-                }
-                        .padding(.bottom, 100)
             }
         }
     }
