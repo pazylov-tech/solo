@@ -14,30 +14,7 @@ struct LogInView: View {
                 Color("PrimaryBG")
                     .ignoresSafeArea()
                 VStack {
-                    HStack {
-                        Image("solo-icon")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 45, height: 45)
-                            .clipShape(.capsule)
-                        Text("SOLO")
-                            .font(.system(size: 37, weight: .semibold, design: .serif))
-                            .foregroundStyle(Color.cyan)
-                    }
-                    VStack (spacing: 10){
-                        Text("Welcome Back")
-                            .font(.largeTitle)
-                            .foregroundStyle(Color.white)
-                            .bold()
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 40)
-                            .padding(.top, 40)
-                        Text("Enter your credentials to continue")
-                            .foregroundStyle(Color(white: 0.70))
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 40)
-                    }
-                    
+                    header
                     Spacer()
                     Button("LOGIN"){}
                         .buttonStyle(PrimaryButtonStyle())
@@ -45,7 +22,7 @@ struct LogInView: View {
                     Text("or")
                         .foregroundStyle(Color(white: 0.70))
                         .padding(.bottom, 20)
-    
+                    
                     VStack (spacing: 12){
                         Button("Continue with Google") {}
                             .buttonStyle(GoogleButtonStyle())
@@ -68,4 +45,34 @@ struct LogInView: View {
 
 #Preview {
     LogInView()
+}
+
+extension LogInView {
+    var header: some View {
+        VStack {
+            HStack {
+                Image("solo-icon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 45, height: 45)
+                    .clipShape(.capsule)
+                Text("SOLO")
+                    .font(.system(size: 37, weight: .semibold, design: .serif))
+                    .foregroundStyle(Color.cyan)
+            }
+            VStack (spacing: 10){
+                Text("Welcome Back")
+                    .font(.largeTitle)
+                    .foregroundStyle(Color.white)
+                    .bold()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 40)
+                    .padding(.top, 40)
+                Text("Enter your credentials to continue")
+                    .foregroundStyle(Color(white: 0.70))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 40)
+            }
+        }
+    }
 }

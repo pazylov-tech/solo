@@ -10,11 +10,19 @@ import SwiftUI
 struct AppField: View {
     var placeholder: String
     @Binding var text: String
+    var isPassword: Bool = false
     var body: some View {
-        TextField(placeholder, text: $text)
-            .frame(height: 48)
-            .padding(.horizontal, 16)
-            .background(.gray.opacity(0.5))
-            .padding(.horizontal, 26)
+        if isPassword {
+            SecureField(placeholder, text: $text)
+                .frame(height: 48)
+                .padding(.horizontal, 16)
+                .background(.gray.opacity(0.70))
+        } else {
+            TextField(placeholder, text: $text)
+                .frame(height: 48)
+                .padding(.horizontal, 16)
+                .background(.gray.opacity(0.70))
+        }
     }
+    
 }

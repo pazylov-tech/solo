@@ -15,10 +15,10 @@ struct SignUpView: View {
                 Color("PrimaryBG")
                     .ignoresSafeArea()
                 VStack (alignment: .leading) {
+                    
                     header
                     
                     Spacer()
-                    
                     VStack {
                         NavigationLink("Continue"){CreateAccount()}
                             .buttonStyle(PrimaryButtonStyle())
@@ -39,7 +39,6 @@ struct SignUpView: View {
     }
 }
 
-
 #Preview {
     SignUpView()
 }
@@ -47,7 +46,7 @@ struct SignUpView: View {
 extension SignUpView {
     var header: some View {
         VStack {
-            
+        
             HStack {
                 Image("solo-icon")
                     .resizable()
@@ -62,7 +61,7 @@ extension SignUpView {
             VStack (alignment: .leading, spacing: 7){
                 Text("Create Account")
                     .font(.largeTitle)
-                    .foregroundStyle(Color.white)
+                    .foregroundStyle(.white)
                     .bold()
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 30)
@@ -72,11 +71,16 @@ extension SignUpView {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 30)
                     .padding(.bottom, 20)
-                VStack (spacing: 15){
-                    AppField(placeholder: "First Name", text: $viewModel.fname)
-                    AppField(placeholder: "Last Name", text: $viewModel.lname)
-                    AppField(placeholder: "Email", text: $viewModel.mail)
-                    AppField(placeholder: "Password", text: $viewModel.password)
+                
+                VStack {
+                    VStack(spacing: 15) {
+                        AppField(placeholder: "First Name", text: $viewModel.fname)
+                        AppField(placeholder: "Last Name", text: $viewModel.lname)
+                        AppField(placeholder: "Email", text: $viewModel.mail)
+                        AppField(placeholder: "Password", text: $viewModel.password, isPassword: true)
+                    }
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .padding(.horizontal, 16)
                 }
             }
     

@@ -14,16 +14,7 @@ struct CreateAccount: View {
                 Color("PrimaryBG")
                     .ignoresSafeArea()
                 VStack {
-                    HStack {
-                        Image("solo-icon")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 45, height: 45)
-                            .clipShape(.capsule)
-                        Text("SOLO")
-                            .font(.system(size: 37, weight: .semibold, design: .serif))
-                            .foregroundStyle(Color.cyan)
-                    }
+                    header
                     VStack (spacing: 10){
                         Text("Almost Done")
                             .font(.largeTitle)
@@ -56,4 +47,21 @@ struct CreateAccount: View {
 
 #Preview {
     CreateAccount()
+}
+
+extension CreateAccount {
+    var header: some View {
+        VStack {
+            HStack {
+                Image("solo-icon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 45, height: 45)
+                    .clipShape(.capsule)
+                Text("SOLO")
+                    .font(.system(size: 37, weight: .semibold, design: .serif))
+                    .foregroundStyle(Color.cyan)
+            }
+        }
+    }
 }

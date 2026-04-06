@@ -14,19 +14,10 @@ struct AuthView: View {
                 Color("PrimaryBG")
                     .ignoresSafeArea()
                 VStack {
-                    HStack {
-                        Image("solo-icon")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 45, height: 45)
-                            .clipShape(.capsule)
-                        Text("SOLO")
-                            .font(.system(size: 37, weight: .semibold, design: .serif))
-                            .foregroundStyle(Color.cyan)
-                    }
-                    
+                    header
+            
                     Spacer()
-                        Text("Welcome to \nSOLO System")
+                    Text("Welcome to \nSOLO System")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundStyle(Color.white)
@@ -44,12 +35,31 @@ struct AuthView: View {
                             .buttonStyle(SignUpButtonStyle())
                     }
                             .padding(.bottom, 70)
+                
                 }
             }
+                    
         }
     }
 }
 
 #Preview {
     AuthView()
+}
+
+extension AuthView {
+    var header: some View {
+        VStack {
+            HStack {
+                Image("solo-icon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 45, height: 45)
+                    .clipShape(.capsule)
+                Text("SOLO")
+                    .font(.system(size: 37, weight: .semibold, design: .serif))
+                    .foregroundStyle(Color.cyan)
+            }
+        }
+    }
 }
