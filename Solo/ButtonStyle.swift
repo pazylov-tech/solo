@@ -13,7 +13,7 @@ struct PrimaryButtonStyle: ButtonStyle {
         configuration.label
             .font(.title3)
             .bold()
-            .frame(maxWidth: 320)
+            .frame(maxWidth: 330)
             .padding(.vertical, 12)
             .foregroundStyle(Color.white)
             .background(Color(red: 14 / 255, green: 47 / 255, blue: 165 / 255))
@@ -27,7 +27,7 @@ struct LogInButtonStyle: ButtonStyle {
         configuration.label
             .font(.title3)
             .fontWeight(.medium)
-            .frame(maxWidth: 320)
+            .frame(maxWidth: 330)
             .padding(.vertical, 10)
             .background(Color(white: 0.85))
             .foregroundStyle(Color.black)
@@ -41,7 +41,7 @@ struct SignUpButtonStyle: ButtonStyle {
         configuration.label
             .font(.title3)
             .fontWeight(.medium)
-            .frame(maxWidth: 320)
+            .frame(maxWidth: 330)
             .padding(.vertical, 10)
             .background(Color(red: 0.267, green: 0.541, blue: 1.0))
             .foregroundStyle(Color.white)
@@ -54,7 +54,7 @@ struct GoogleButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .fontWeight(.semibold)
-            .frame(maxWidth: 320)
+            .frame(maxWidth: 330)
             .padding(.vertical, 15)
             .foregroundStyle(Color.black)
             .background(Color.white)
@@ -67,7 +67,7 @@ struct AppleButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .fontWeight(.semibold)
-            .frame(maxWidth: 320)
+            .frame(maxWidth: 330)
             .padding(.vertical, 15)
             .foregroundStyle(Color.white)
             .background(Color.black)

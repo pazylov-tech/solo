@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LogInView: View {
+    @StateObject var ViewModel = LogInViewModel()
     var body : some View {
         NavigationStack {
             ZStack {
@@ -15,6 +16,7 @@ struct LogInView: View {
                     .ignoresSafeArea()
                 VStack {
                     header
+                    
                     Spacer()
                     Button("LOGIN"){}
                         .buttonStyle(PrimaryButtonStyle())
@@ -66,12 +68,33 @@ extension LogInView {
                     .foregroundStyle(Color.white)
                     .bold()
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading, 40)
+                    .padding(.leading, 30)
                     .padding(.top, 40)
                 Text("Enter your credentials to continue")
                     .foregroundStyle(Color(white: 0.70))
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading, 40)
+                    .padding(.leading, 30)
+                    .padding(.bottom, 30)
+                
+                VStack {
+                    VStack (alignment: .leading, spacing: 15) {
+                        Text("EMAIL")
+                            .foregroundStyle(.white)
+                        AppField(placeholder: "", text: $ViewModel.mail)
+                            .cornerRadius(12)
+                        Text("PASSWORD")
+                            .foregroundStyle(.white)
+                        AppField(placeholder: "", text: $ViewModel.password)
+                            .cornerRadius(12)
+                    }
+                    .padding(.horizontal, 30)
+                }
+                
+                Button("Forgot Password?") {}
+                    .foregroundStyle(Color(white: 0.70))
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .padding(.trailing, 30)
+        
             }
         }
     }

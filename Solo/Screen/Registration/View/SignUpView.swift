@@ -23,7 +23,7 @@ struct SignUpView: View {
                         NavigationLink("Continue"){CreateAccount()}
                             .buttonStyle(PrimaryButtonStyle())
                             .frame(maxWidth: .infinity)
-                            .padding(.bottom, 5)
+                            .padding(.bottom, 10)
                         HStack {
                             Text("Already have an account?")
                                 .fontWeight(.thin)
@@ -31,7 +31,7 @@ struct SignUpView: View {
                             NavigationLink("Sign In") {LogInView()}
                                 .fontWeight(.semibold)
                         }
-                        .padding(.bottom, 10)
+                        .padding(.bottom, 20)
                     }
                 }
             }
@@ -73,14 +73,14 @@ extension SignUpView {
                     .padding(.bottom, 20)
                 
                 VStack {
-                    VStack(spacing: 15) {
+                    VStack(spacing: 20) {
                         AppField(placeholder: "First Name", text: $viewModel.fname)
                         AppField(placeholder: "Last Name", text: $viewModel.lname)
                         AppField(placeholder: "Email", text: $viewModel.mail)
                         AppField(placeholder: "Password", text: $viewModel.password, isPassword: true)
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 12))
-                    .padding(.horizontal, 16)
+                    .padding(.horizontal, 30)
                 }
             }
     

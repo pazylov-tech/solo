@@ -15,30 +15,17 @@ struct CreateAccount: View {
                     .ignoresSafeArea()
                 VStack {
                     header
-                    VStack (spacing: 10){
-                        Text("Almost Done")
-                            .font(.largeTitle)
-                            .foregroundStyle(Color.white)
-                            .bold()
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 40)
-                            .padding(.top, 40)
-                        Text("Step 2 of 2: Personal Information")
-                            .foregroundStyle(Color(white: 0.70))
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 40)
-                    }
                     
                     Spacer()
                     Button("Create Account"){}
                         .buttonStyle(PrimaryButtonStyle())
-                        .padding(.bottom, 5)
+                        .padding(.bottom, 10)
                     Text("By creating an account, you agree to SOLO's Terms of Service and Privacy Policy")
                         .font(.caption)
-                        .padding(.horizontal, 40)
+                        .padding(.horizontal, 30)
                         .foregroundStyle(Color(white: 0.70))
                         .multilineTextAlignment(.center)
-                        .padding(.bottom, 20)
+                        .padding(.bottom, 30)
                 }
             }
         }
@@ -61,6 +48,19 @@ extension CreateAccount {
                 Text("SOLO")
                     .font(.system(size: 37, weight: .semibold, design: .serif))
                     .foregroundStyle(Color.cyan)
+            }
+            VStack (spacing: 10){
+                Text("Almost Done")
+                    .font(.largeTitle)
+                    .foregroundStyle(Color.white)
+                    .bold()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 30)
+                    .padding(.top, 40)
+                Text("Step 2 of 2: Personal Information")
+                    .foregroundStyle(Color(white: 0.70))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 30)
             }
         }
     }
